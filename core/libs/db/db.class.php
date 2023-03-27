@@ -108,6 +108,15 @@ class Unique
      * @return data (if not it will be NULL)
      */
 
+     public static function getNameBasedId($col,$value)
+    {        
+        $sql = "SELECT `name` FROM user WHERE `register_no` = $value;";
+        // SELECT `name` FROM `user` WHERE `register_no` = '95072012061'
+        // echo $sql;
+        return unique::get_data(Database::getConnection(),$sql);
+    }
+
+
     public function getTotalBased($col,$value)
     {        
         $sql = "SELECT * FROM `$this->table_name` WHERE `$col` = '$value' AND `deleted_at` IS NULL ;";

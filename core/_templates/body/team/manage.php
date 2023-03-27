@@ -10,10 +10,7 @@
                     <th>Sno</th>
                     <th>Team name</th>
                     <th>Leader name</th>
-                    <th>Member one</th>
-                    <th>Member two</th>
-                    <th>Member three</th>
-                    <th>Member four</th>
+                    <th>Users</th>
                     <th>Update</th>
                     <th>Delete</th>
 
@@ -31,12 +28,18 @@
                         <td> <?= $key + 1 ?></td>
                         <td><?= $values['team_name'] ?></td>
                         <td><?= $values['leader_name'] ?></td>
-                        <td><?= $values['user_one'] ?></td>
-                        <td><?= $values['user_two'] ?></td>
-                        <td><?= $values['user_three'] ?></td>
-                        <td><?= $values['user_four'] ?></td>
+                        <td><?= $values['team_members'] ?></td>
+                        <!-- 
+                        $result = explode(",",$values['team_members])
+                        $empty = []
+                        for($result as $key=> $value){
+                            $id = $value;
+                            // get the name based on id and append to the empty array
+                        }
 
-
+                        $names = implode(",",$empty);
+                        echo $names;
+                         -->
                      
                         <td><a href="update.php?id=<?php echo $values['id'] ?>"><button class="btn btn-primary btn-rounded mb-2">Update</button></a></td>
 

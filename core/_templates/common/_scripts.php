@@ -84,6 +84,11 @@ function del() {
 $('.alert-success').delay(2000).fadeOut('medium');
 $('.alert-danger').delay(2000).fadeOut('medium');
 $('.alert-primary').delay(2000).fadeOut('medium');
+
+$(".tagging").select2({
+		tags: true
+	});
+
 </script>
 
 <script type="text/javascript">
@@ -229,6 +234,36 @@ function mem1() {
             });
         },
         error: function(xhr, status, error) {}
+    });
+
+}
+
+function NameBasedReg_no() {
+    console.log("namebasedregno calling");
+    // var member_one = document.querySelector('#select1').value;
+    var register_no = $('#reg_no').val();
+    console.log(register_no);
+    // output =member_one;
+
+    $.ajax({
+        type: "POST",
+        url: "https://nattu.me/FX-LABS/api/getname.php",
+        dataType: "json",
+        data: {
+            "reg_no": register_no,
+        },
+        success: function(data) {
+            // var sub_cat_name = data[0].name;
+            // var sub_cat_id = data[0].id;
+
+            console.log(data[0].name);
+            var i = 0;
+            var $el = $("#name").val(data[0].name)
+            // $el.append($("<input>").attr("value", data[i].id).text(data[i].name));
+        },
+        error: function(xhr, status, error) {
+            console.log("error in js")
+        }
     });
 
 }
