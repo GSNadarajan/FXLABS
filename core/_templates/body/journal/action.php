@@ -3,9 +3,11 @@
 $db = new Unique("journal", "-");
 
 if (isset($_POST['add'])) {
+    console::log($_POST);
     
     $add_arr = array(
-        "user_id" => Filter::input($_POST['user_id']),
+        "register_no" => Filter::input($_POST['register_no']),
+        "name" => Filter::input($_POST['name']),
         "topic" => Filter::input($_POST['topic']),
         "desc" => Filter::input($_POST['description']),
         "published" => Filter::input($_POST['published']),

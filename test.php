@@ -1,26 +1,28 @@
 <?php
-
+// include ""
 include "core/libs/load.php";
-Session::start();
-
-// print_r($_POST);
-$id_one = $_POST['id'];
-
-
-Session::set('member1_id',$id);
-
-$data = [];
-$filter_name = unique::get_distinctdata();
-foreach($filter_name as $key => $values){
-    if($values['id'] != $id_one){
-        $data[] = $values;
-        
-
-    }
+echo '<pre>';
+$result = explode(",","43,44,45,46");
+$empty = [];
+foreach($result as $key => $values){
+    // console::log($values);
+    $user = new Unique('user',$values);
+    $result = $user->getTotalBased('id',$values);
+    $empty[] = $result;
+    
+    // $empty[] = $user->getTotalBased("id",$id);
+    
 }
 
-echo json_encode($data);
-    ?>
+$names = "";
+// print_r($empty);
 
 
+foreach($empty as $data => $name){
 
+    $names .= $name[0]['name'].",";
+}
+
+echo $names;
+
+echo "</pre>";

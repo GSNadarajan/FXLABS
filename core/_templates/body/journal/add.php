@@ -13,7 +13,8 @@
                     <input type="hidden" value="1" name="add">
                     <div class="form-group mb-3 md-2">
                         <label for="inputZip">Register no</label>
-                        <input type="number" name="register_no" class="form-control"  id="reg_no" onchange="NameBasedReg_no()" required placeholder="Enter the register number">
+                        <input type="number" name="register_no" class="form-control"  id="reg_no" onchange="NameBasedReg_no()" required placeholder="Eg: 95072012073">
+
                     </div>
 
                     <div class="form-group mb-3 md-2">

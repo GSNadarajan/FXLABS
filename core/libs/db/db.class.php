@@ -120,7 +120,7 @@ class Unique
     public function getTotalBased($col,$value)
     {        
         $sql = "SELECT * FROM `$this->table_name` WHERE `$col` = '$value' AND `deleted_at` IS NULL ;";
-        echo $sql;
+        // echo $sql;
         return unique::get_data(Database::getConnection(),$sql);
     }
 

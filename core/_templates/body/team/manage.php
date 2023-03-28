@@ -28,18 +28,11 @@
                         <td> <?= $key + 1 ?></td>
                         <td><?= $values['team_name'] ?></td>
                         <td><?= $values['leader_name'] ?></td>
-                        <td><?= $values['team_members'] ?></td>
-                        <!-- 
-                        $result = explode(",",$values['team_members])
-                        $empty = []
-                        for($result as $key=> $value){
-                            $id = $value;
-                            // get the name based on id and append to the empty array
-                        }
+                       
 
-                        $names = implode(",",$empty);
-                        echo $names;
-                         -->
+                       
+                     
+                         <td><?= $values['team_name'] ?></td>
                      
                         <td><a href="update.php?id=<?php echo $values['id'] ?>"><button class="btn btn-primary btn-rounded mb-2">Update</button></a></td>
 
